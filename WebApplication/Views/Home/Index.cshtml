@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model SamplesViewModel
+
+<h3>Events</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Timestamp
+            </th>
+            <th>
+                Sample
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.EventList)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Timestamp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sample)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<h3> Resampled Events</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Timestamp
+            </th>
+            <th>
+                Sample
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.SampledList)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Timestamp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sample)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
